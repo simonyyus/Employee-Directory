@@ -1,9 +1,10 @@
 .wrapper {
   display: flex;
   justify-content: center;
+  height: 800px;
   margin: 20px 80px 40px;
   box-shadow: 2px 2px 2px 2px #888888;
-  overflow: auto;
+  overflow: visible;
 }
 .homepage,
 .employeepage {
@@ -13,10 +14,22 @@
   height: 650px;
   margin: 5px;
 }
+.employeepage {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 650px;
+  margin: 5px;
+  background-color: rgb(220, 251, 252);
+}
 .headerOne,
 .headerTwo {
   border: solid rgb(97, 133, 212) 2px;
-  background-color: rgb(246, 249, 250);
+  background-color: rgb(27, 203, 209);
+}
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  color: #ffffff;
 }
 .search {
   border-radius: 5px;

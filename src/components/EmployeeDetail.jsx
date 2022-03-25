@@ -1,10 +1,10 @@
 import React from "react";
-function EmployeeDetail(props)
+function EmployeeDetail({empDetail,getName, name})
 {
     return(
         <div className="container">
-            {props.empDetail
-            .filter(item=> item.name==="Fiker Workineh")
+            {empDetail
+            .filter(item=> item.name===name)
             .map((list)=>{
                 return(
                     <div className="empDetail-container">

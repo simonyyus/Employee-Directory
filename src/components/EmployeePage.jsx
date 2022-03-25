@@ -1,13 +1,12 @@
 import React from "react";
 import HeaderTwo from "./HeaderTwo";
 import EmployeeDetail from "./EmployeeDetail";
-//import EmployeeDetail from "./EmployeeDetail";
-function EmployeePage(props){
+function EmployeePage({employeeList,getName, name}){
     return(
         <div className="empDetail-container">
             <div className="employeepage">
                 <HeaderTwo/>
-                <EmployeeDetail empDetail={props.employeeList}/>
+                <EmployeeDetail empDetail={employeeList} getName={getName} name={name}/>
             </div>
            
         </div>

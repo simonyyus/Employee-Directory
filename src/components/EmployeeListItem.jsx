@@ -1,11 +1,29 @@
-import React from "react";
-function EmployeeListItem(props)
+import React,{useState} from "react";
+function EmployeeListItem({getName, employeeList})
 {
+
+    const [searchItem, setSearchItem]= useState("");
+
+    const handleSearch=((e)=>{
+        setSearchItem(e.target.value);
+    })
+
+    const nameToShow=employeeList.filter((e)=>{
+        return e.name.toUpperCase().includes(searchItem.toUpperCase())
+    })
+
+
+
     return(
+        <div>
+        <div className="search">
+            <input className="search" type="text" placeholder="search.." onChange={handleSearch}></input>
+        </div>
         <div className="container">
-            {props.employeeList.map((list)=>{
+            {nameToShow.map((list)=>{
+
                 return(
-                    <div className="employeeList">
+                    <div className="employeeList" onClick={() => getName(list.name)}>
                         <div className="img-container">
                             <img src={list.img} alt="pic"/>
                         </div>
@@ -16,6 +34,7 @@ function EmployeeListItem(props)
                     </div>
                 )
             })}
+        </div>
         </div>
         )
 }

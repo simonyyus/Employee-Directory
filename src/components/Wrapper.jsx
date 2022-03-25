@@ -3,18 +3,13 @@ import HomePage from "./HomePage";
 import EmployeePage from"./EmployeePage";
 import  "./Style.css";
 
-function Wrapper(props){
+function Wrapper({getName, employeeList, name}){
+       
     return(
-    <div className="wrapper" /*style={styleWrapper}*/>
-        <HomePage employeeList={props.employeeList}/>
-        <EmployeePage employeeList={props.employeeList}/>
+    <div className="wrapper">
+        <HomePage employeeList={employeeList} getName={getName}/>
+        <EmployeePage employeeList={employeeList} getName={getName} name={name}/>
     </div>
     )
 };
-/*const styleWrapper={
-    display:"flex",
-    justifyContent:"center",
-    margin:"20px 80px 40px",
-}*/
-
 export default Wrapper;

@@ -1,13 +1,13 @@
 import React from "react";
 import HeaderOne from"./HeaderOne";
-import Search from "./Search";
+//import Search from "./Search";
 import EmployeeListItem from "./EmployeeListItem";
-function HomePage(props){
+function HomePage({getName, employeeList}){
+   
     return(
         <div className="homepage">
             <HeaderOne/>
-            <Search/>
-            <EmployeeListItem employeeList={props.employeeList}/>
+            <EmployeeListItem employeeList={employeeList} getName={getName} />
         </div>
     )
 }
