@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Wrapper from "./components/Wrapper";
 import "./App.css";
 
 function App() {
   //define employee state here using react hooks
-  const [employeeData, setEmployeeData] = React.useState([
+  const [employeeData, setEmployeeData] = useState([
     {
+      id: 1,
       img: "./images/pic-one.jpg",
       name: "Simon Worku",
       position: "CEO",
@@ -15,6 +16,7 @@ function App() {
       email: "simon@gmail.com",
     },
     {
+      id: 2,
       img: "./images/pic-two.jpg",
       name: "Fiker Workineh",
       position: "HR",
@@ -24,6 +26,7 @@ function App() {
       email: "fiker@gmail.com",
     },
     {
+      id: 3,
       img: "./images/pic-three.jpg",
       name: "Girum Dori",
       position: "Marketing Manager",
@@ -33,6 +36,7 @@ function App() {
       email: "girum@gmail.com",
     },
     {
+      id: 4,
       img: "./images/pic-four.jpg",
       name: "Bethel Tefera",
       position: "QA Manager",
@@ -42,6 +46,7 @@ function App() {
       email: "bethel@gmail.com",
     },
     {
+      id: 5,
       img: "./images/pic-five.jpg",
       name: "Nega T",
       position: "IT Manager",
@@ -51,6 +56,7 @@ function App() {
       email: "nega@gmail.com",
     },
     {
+      id: 6,
       img: "./images/pic-six.jpg",
       name: "Elleni E",
       position: "VP of sales",
@@ -60,6 +66,7 @@ function App() {
       email: "elleni@gmail.com",
     },
     {
+      id: 7,
       img: "./images/pic-seven.jpg",
       name: "Assegid A",
       position: "Finance Manager",
@@ -69,9 +76,14 @@ function App() {
       email: "asseged@gmail.com",
     },
   ]);
+  const [name, setName] = useState("");
+
+  const getName = (newName) => {
+    setName(newName);
+  };
   return (
     <div className="App">
-      <Wrapper employeeList={employeeData} />
+      <Wrapper employeeList={employeeData} getName={getName} name={name} />
     </div>
   );
 }
